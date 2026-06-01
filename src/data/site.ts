@@ -140,6 +140,11 @@ export type WorkItem = {
   status: "live" | "demo" | "private";
   link?: string;
   highlight?: boolean;
+  clientNote?: string;
+  demoAccount?: {
+    username: string;
+    password: string;
+  };
 };
 
 export const works: WorkItem[] = [
@@ -147,9 +152,15 @@ export const works: WorkItem[] = [
     id: "game-portal",
     title: "某知名線上遊戲私服官方網站",
     category: "客製全端平台",
-    summary: "知名線上遊戲私服的官方玩家入口，整合登入、帳號、儲值、論壇與 GM 後台。",
+    summary: "客戶委託開發的遊戲官方玩家入口，整合登入、帳號、儲值、論壇與 GM 後台。",
     description:
-      "直接對接遊戲 MySQL 資料庫，玩家用遊戲帳號登入即可查角色、看排名、申請儲值、使用論壇。含 Rate Limit 防暴力破解、信箱驗證、人工核帳儲值流程，以及可設定的跑馬燈後台。",
+      "此為某客戶的正式上線作品。直接對接遊戲 MySQL 資料庫，玩家用遊戲帳號登入即可查角色、看排名、申請儲值、使用論壇。含 Rate Limit 防暴力破解、信箱驗證、人工核帳儲值流程，以及可設定的跑馬燈後台。",
+    clientNote: "客戶委託作品 · 已正式上線營運",
+    link: "https://littletreetms.com/",
+    demoAccount: {
+      username: "DreamTest123",
+      password: "DreamTest123",
+    },
     tech: ["Next.js 15", "React 19", "TypeScript", "Prisma", "MySQL", "iron-session", "Resend", "Tailwind CSS", "pm2"],
     features: [
       "遊戲帳號登入（bcrypt）與 Session 管理",
@@ -160,7 +171,7 @@ export const works: WorkItem[] = [
       "信箱綁定與驗證（背景寄信 worker）",
       "登入嘗試紀錄與 Rate Limit",
     ],
-    status: "private",
+    status: "live",
     highlight: true,
   },
 ];

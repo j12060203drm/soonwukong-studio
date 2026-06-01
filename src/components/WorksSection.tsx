@@ -1,5 +1,6 @@
 import { works } from "@/data/site";
 import { SectionHeading } from "@/components/AboutSection";
+import { WorkDemoCredentials } from "@/components/WorkDemoCredentials";
 
 const statusLabel = {
   live: "已上線",
@@ -36,6 +37,11 @@ export function WorksSection() {
                     <span className="rounded-md border border-[var(--border)] px-2 py-0.5 text-[11px] text-[var(--muted)]">
                       {statusLabel[work.status]}
                     </span>
+                    {work.clientNote ? (
+                      <span className="rounded-md bg-sky-500/15 px-2 py-0.5 text-[11px] text-sky-200">
+                        {work.clientNote}
+                      </span>
+                    ) : null}
                     {work.highlight ? (
                       <span className="rounded-md bg-amber-500/15 px-2 py-0.5 text-[11px] text-amber-200">
                         主打案例
@@ -57,6 +63,17 @@ export function WorksSection() {
                       </span>
                     ))}
                   </div>
+
+                  {work.link ? (
+                    <a
+                      href={work.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-1 rounded-lg bg-[var(--accent)]/15 px-4 py-2 text-sm font-medium text-[var(--accent-bright)] ring-1 ring-[var(--accent-dim)]/50 transition hover:bg-[var(--accent)]/25"
+                    >
+                      前往客戶網站 →
+                    </a>
+                  ) : null}
                 </div>
 
                 <div className="p-6">
@@ -70,20 +87,12 @@ export function WorksSection() {
                     ))}
                   </ul>
 
-                  {work.link ? (
-                    <a
-                      href={work.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-bright)] hover:underline"
-                    >
-                      查看網站 →
-                    </a>
-                  ) : (
-                    <p className="mt-6 text-xs text-[var(--muted)]">
-                      此專案含登入與後台，可於洽談時提供截圖或 Demo 說明。
-                    </p>
-                  )}
+                  {work.demoAccount ? (
+                    <WorkDemoCredentials
+                      username={work.demoAccount.username}
+                      password={work.demoAccount.password}
+                    />
+                  ) : null}
                 </div>
               </div>
             </article>
