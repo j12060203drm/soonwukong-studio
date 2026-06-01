@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --surface-2: #181c26;
+  --border: #252b38;
+  --accent: #d4a574;
+  --accent-bright: #e8c49a;
+  --accent-dim: #9a7348;
+  --text: #eef1f6;
+  --muted: #8b95a8;
+  --glow: rgba(212, 165, 116, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection {
+  background: rgba(212, 165, 116, 0.35);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.7s ease-out 0.1s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.2s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.7s ease-out 0.3s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3 {
+    animation: none;
+  }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(212, 165, 116, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 165, 116, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
