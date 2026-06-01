@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: "從形象官網到客製系統，專注交付品質與長期維護",
   email: "soonwukong2026@gmail.com",
   lineUrl: "https://line.me/ti/p/qFmW2ZBTZR",
-  lineQrImage: "/line-qr.png",
+  lineQrImage: "/line-qr.jpg",
   location: "台灣",
   yearStarted: 2025,
 };
