@@ -51,9 +51,9 @@ export function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{eyebrow}</p>
-      <h2 className="mt-2 text-3xl font-bold tracking-tight text-[var(--text)]">{title}</h2>
-      <p className="mt-3 text-[var(--muted)]">{subtitle}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--accent)] md:text-sm">{eyebrow}</p>
+      <h2 className="mt-2 text-3xl font-bold tracking-tight text-[var(--text)] md:text-4xl">{title}</h2>
+      <p className="mt-3 text-base text-[var(--muted)] md:text-lg">{subtitle}</p>
     </div>
   );
 }
