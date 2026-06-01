@@ -11,7 +11,7 @@ export function WorkDemoCredentials({
 }) {
   const [copied, setCopied] = useState(false);
 
-  const copyText = `帳號：${username}\n密碼：${password}`;
+  const copyText = username;
 
   async function handleCopy() {
     try {
@@ -41,7 +41,7 @@ export function WorkDemoCredentials({
         onClick={handleCopy}
         className="mt-4 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm font-medium text-[var(--text)] transition hover:border-[var(--accent-dim)] hover:bg-[var(--surface-2)]"
       >
-        {copied ? "已複製帳號密碼" : "複製帳號密碼"}
+        {copied ? "已複製" : "複製帳號密碼"}
       </button>
     </div>
   );
